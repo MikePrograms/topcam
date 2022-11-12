@@ -18,6 +18,7 @@ def load_cam(window):
     window.drag_pos = None
     window.portrait_mode = False
     window.landscape_mode = False
+    window.reverse_mode = False
 
 
 def update_frames(window):
@@ -62,3 +63,8 @@ def update_frames(window):
             final_qpixmap_image.setMask(mask.mask())
 
         window.cam_frame.setPixmap(final_qpixmap_image)
+
+        if window.reverse_mode:
+            window.cam_frame.setPixmap(
+                final_qpixmap_image.transformed(QtGui.QTransform().scale(-1, 1))
+            )

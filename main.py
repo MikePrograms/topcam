@@ -1,10 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtCore import Qt
-import cam_manager
-import config_manager
-import keymap_manager
-import guide_manager
+from managers import cam_manager, config_manager, keymap_manager, guide_manager
 
 
 class MainWindow(QWidget):

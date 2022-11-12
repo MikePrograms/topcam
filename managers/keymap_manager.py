@@ -62,6 +62,8 @@ def load_mode_keymap(window, event):
         event.key() == QtCore.Qt.Key_L and event.modifiers() == QtCore.Qt.NoModifier
     )
 
+    key_reverse = event.key() == QtCore.Qt.Key_R
+
     if key_portrait:
         if window.portrait_mode:
             window.portrait_mode = False
@@ -80,6 +82,12 @@ def load_mode_keymap(window, event):
             window.save_config()
         elif not window.landscape_mode:
             window.portrait_mode = False
+
+    if key_reverse:
+        if window.reverse_mode:
+            window.reverse_mode = False
+        elif not window.reverse_mode:
+            window.reverse_mode = True
 
 
 def load_guide_keymap(window, event):
