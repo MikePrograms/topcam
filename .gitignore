@@ -1,3 +1,6 @@
 /.DS_Store
 /__pycache__
 /topcam.code-workspace
+configs/default_config.toml
+.gitignore
+configs/.DS_Store
